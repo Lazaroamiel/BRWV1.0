@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briesses Residencial</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+  <!-- Botón hamburguesa (solo se muestra en móvil) -->
+  <button class="navToggle" id="navToggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Abrir menú de navegación">
+    <span class="navToggle__bars" aria-hidden="true"></span>
+  </button>
+
+  <nav class="navBar" id="site-nav">
+      <a href="#sobre" class="navBar__Section">Sobre nosotros</a>
+      <a href="#actividades" class="navBar__Section">Nuestras actividades</a>
+      <a href="#galeria" class="navBar__Section">Galería</a>
+      <a href="#faq" class="navBar__Section">Preguntas frecuentes</a>
+      <a href="#ubicacion" class="navBar__Section">Ubicación</a>
+      <a href="#contacto" class="navBar__Section">Contacto</a>
+
+      <!-- CTA dentro del panel móvil -->
+      <a href="#contacto" class="navBar__CTA" role="button" aria-label="Solicitar admisión">Solicitar admisión</a>
+  </nav>
+</header>
+
+<!-- Capa de fondo cuando el menú está abierto -->
+<div class="navBackdrop" id="nav-backdrop" hidden></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="title reveal" id="inicio" aria-label="Presentación">
+      <h1 class="title__Main">Brises Residencial</h1>
+      <h2 class="title__Sub">Tu hogar, tu refugio</h2>
+    </section>
+
+    <section id="sobre" class="reveal">
+      <h2>Sobre nosotros</h2>
+      <p>Brises Residencial es un complejo de viviendas ubicado en la costa mediterránea, diseñado para ofrecer un estilo de vida relajado y confortable. Nuestro objetivo es proporcionar a nuestros residentes un entorno seguro y acogedor, donde puedan disfrutar de la belleza natural de la región y de una comunidad vibrante.</p>
+    </section>
+
+    <section id="actividades" class="reveal">
+      <h2>Nuestras actividades</h2>
+      <ul>
+        <li>Actividades acuáticas: natación, paddle surf, kayak.</li>
+        <li>Deportes al aire libre: senderismo, ciclismo, yoga en la playa.</li>
+        <li>Eventos comunitarios: barbacoas, cine al aire libre, talleres de arte.</li>
+        <li>Club social: reuniones, juegos de mesa, clases de cocina.</li>
+      </ul>
+    </section>
+
+    <section id="galeria" class="reveal" aria-label="Galería">
+        <h2>Galería</h2>
+
+        <div class="carousel" role="region" aria-label="Carrusel de imágenes">
+            <button class="carousel__btn prev" aria-label="Imagen anterior" type="button"></button>
+
+            <div class="carousel__viewport">
+                <div class="carousel__track" id="carousel-track" aria-live="polite">
+                    <img src="/Practicas/P1/IMAGENES/car-1.jpg" alt="Jardín con sombra y bancos">
+                    <img src="/Practicas/P1/IMAGENES/car-2.jpg" alt="Sala luminosa con sillones">
+                    <img src="/Practicas/P1/IMAGENES/car-3.jpg" alt="Habitación amplia con luz natural">
+                </div>
+            </div>
+
+            <button class="carousel__btn next" aria-label="Imagen siguiente" type="button"></button>
+        </div>
+    </section>
+
+    <section id="ubicacion" class="reveal" aria-label="Ubicación y mapa">
+        <h2>Cómo llegar</h2>
+        <p>Estamos en Calle de la Playa 123, Ciudad Costera.</p>
+
+        <div class="map">
+            <iframe class="map__frame"
+                title="Mapa de ubicación de Brises Residencial"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Calle+de+la+Playa+123,+Ciudad+Costera&z=15&output=embed">
+            </iframe>
+        </div>
+
+        <p class="map__link">
+        <a href="https://www.google.com/maps/search/?api=1&query=Calle+de+la+Playa+123,+Ciudad+Costera" target="_blank" rel="noopener"> Abrir en Google Maps </a>
+        </p>
+    </section>
+
+    <section id="contacto" class="reveal" aria-label="Contacto">
+      <h2>Contacto</h2>
+      <p>Dirección: Calle de la Playa, 123, Ciudad Costera, País</p>
+      <p>Teléfono: <a href="tel:+34123456789">+34 123 456 789</a></p>
+      <p>Email: <a href="mailto:contacto@brises.com">contacto@brises.com</a></p>
+
+      <!-- Formulario accesible -->
+      <form class="form" action="#" method="post" aria-label="Formulario de contacto">
+        <div class="form__row">
+          <label for="nombre">Nombre y apellido</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+        </div>
+        <div class="form__row">
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="form__row">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos en qué podemos ayudarte" required></textarea>
+        </div>
+        <button class="btn btn--primary" type="submit">Enviar consulta</button>
+      </form>
+    </section>
+
+    <section id="faq" class="reveal" aria-label="Preguntas frecuentes">
+        <h2>Preguntas frecuentes</h2>
+
+        <div class="faq">
+            <details class="faq__item">
+                <summary>¿A quién está dirigida la residencia?</summary>
+                <div class="faq__content">
+                    <p>Brises recibe personas adultas en recuperación o en tratamiento activo de salud mental que se benefician de un entorno seguro, contenedor y con acompañamiento profesional.</p>
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary>¿Cómo es el proceso de admisión?</summary>
+                <div class="faq__content">
+                    <p>Iniciamos con una consulta telefónica y una entrevista clínica interdisciplinaria. Si hay criterios de ingreso, diseñamos un plan personalizado junto a la familia y al equipo tratante.</p>
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary>¿Qué equipo profesional trabaja en Brises?</summary>
+                <div class="faq__content">
+                    <p>Contamos con psiquiatría, psicología, enfermería, terapia ocupacional y trabajo social, con cobertura 24/7 y protocolos de actuación.</p>
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary>¿Se permiten visitas de familiares?</summary>
+                <div class="faq__content">
+                    <p>Sí. Las visitas se coordinan previamente para preservar las rutinas terapéuticas y el descanso. Podemos adaptar días/horarios según cada caso.</p>
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary>¿Cómo se manejan la medicación y las intercurrencias?</summary>
+                <div class="faq__content">
+                    <p>La medicación se administra y controla por enfermería según prescripción médica. Ante intercurrencias, activamos los protocolos y nos comunicamos con la familia y el equipo tratante.</p>
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary>¿Aceptan obras sociales o prepagas?</summary>
+                <div class="faq__content">
+                    <p>Trabajamos con diversas coberturas y planes. Consultanos con tus datos para confirmarlo y orientar la gestión.</p>
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary>¿Qué medidas de seguridad y privacidad tienen?</summary>
+                <div class="faq__content">
+                    <p>Mantenemos accesos controlados, supervisión continua y políticas de confidencialidad. El objetivo es un ambiente seguro y respetuoso.</p>
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary>¿Qué llevar el día de ingreso?</summary>
+                <div class="faq__content">
+                    <p>Documento de identidad, resumen de historia clínica, medicación vigente (si corresponde) y elementos de uso personal. Te enviamos un checklist al confirmar la admisión.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Brises Residencial. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- CTA flotante -->
+  <a class="cta-fixed" href="#contacto" aria-label="Solicitar admisión">Solicitar admisión</a>
+  <script src="nav.js" defer></script>
+  <script src="carousel.js" defer></script>
+  <script src="reveal.js" defer></script>
+</body>
+</html>
